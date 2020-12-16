@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="loading-mask"></div>
+    <div id="loading-mask">
+        <div class="loading-icon">⏳</div>
+    </div>
     <div class="content">
         <div class="result">
             <h1 id="result-1">今天的冷空氣是</h1>
@@ -28,6 +30,7 @@
         </div>
         <div class="footer">
             <div class="footer-item">
+                <a href="javascript:update()" id="update">更新</a> -
                 <a href="https://github.com/vrabe/coldnessTW">GitHub</a> - 
                 <a href="attributionStatement.txt">顯名聲明</a>
             </div>
