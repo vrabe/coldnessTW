@@ -10,17 +10,17 @@
 <body>
     <div class="content">
         <div class="result">
-            <h1 id="result-1">今天的冷空氣是</h1>
-            <h2 id="result-2">東北季風</h2>
+            <h1 id="result-1">{REPLACE-RESULT-1}</h1>
+            <h2 id="result-2">{REPLACE-RESULT-2}</h2>
         </div>
         <div class="temp">
             <div class="temp-item">
                 <span class="temp-title">現在臺北溫度</span>
-                <span class="temp-text" id="current-temp">15.0</span>
+                <span class="temp-text" id="current-temp">{REPLACE-CUR-TEMP}</span>
             </div>
             <div class="temp-item">
-                <span class="temp-title">今日臺北最低溫度<span id="min-temp-time">06:00</span></span>
-                <span class="temp-text" id="min-temp">15.0</span>
+                <span class="temp-title">今日臺北最低溫度<span id="min-temp-time">{REPLACE-MIN-TEMP-TIME}</span></span>
+                <span class="temp-text" id="min-temp">{REPLACE-MIN-TEMP}</span>
             </div>
         </div>
         <div class="footer">
@@ -29,7 +29,7 @@
                 <a href="attributionStatement.txt">顯名聲明</a>
             </div>
             <div class="footer-item footer-right">
-                <span id="update-time">2020-12-17 06:00:00</span>
+                <span id="update-time">{REPLACE-TIME}</span>
             </div>
         </div>
     </div>
