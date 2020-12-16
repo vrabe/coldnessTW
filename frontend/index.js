@@ -1,4 +1,5 @@
 function update() {
+    document.getElementById("update").style.color = "#888";
     fetch('https://api.coldness.vrabe.tw')
         .then(function (response) {
             return response.json();
@@ -16,7 +17,8 @@ function update() {
             document.getElementById("min-temp").textContent = data.minTemp.toFixed(1);
             document.getElementById("update-time").textContent = data.time;
             document.getElementById("min-temp-time").textContent = `${minTempTime.getHours()}:${minTempTime.getMinutes()}`;
-            document.getElementById('loading-mask').style.display = 'none';
+            document.getElementById("loading-mask").style.display = 'none';
+            document.getElementById("update").style.color = "#000";
         });
 }
 
