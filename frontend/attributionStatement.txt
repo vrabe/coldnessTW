@@ -1,0 +1,7 @@
+交通部中央氣象局 [2020-] [局屬氣象站-現在天氣觀測報告]
+
+此開放資料依政府資料開放授權條款 (Open Government Data License) 進行公眾釋出，使用者於遵守本條款各項規定之前提下，得利用之。
+
+政府資料開放授權條款 https://data.gov.tw/license *
+
+* 資料取自氣象資料開放平臺，因文字檔無法呈現授權條款 (https://opendata.cwb.gov.tw/devManual/rules) 顯名聲明中之超連結，故將連結網址置於原超連結文字之後。原始之顯名聲明可至 https://opendata.cwb.gov.tw/devManual/rules 取得。

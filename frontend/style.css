@@ -1,0 +1,117 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+body,html {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #000;
+}
+
+#loading-mask {
+    background-color: white;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.content {
+    flex: 1;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.result {
+    margin: 20px;
+}
+
+#result-1 {
+    line-height: 0;
+    font-size: 32px;
+}
+
+#result-2 {
+    font-size: 60px;
+}
+
+.temp {
+    display: flex;
+}
+
+.temp-item {
+    flex: 1;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #000;
+}
+
+.temp-item span {
+    display: block;
+}
+
+#min-temp-time {
+    display: inline;
+}
+
+#min-temp-time::before {
+    content: "(";
+}
+
+#min-temp-time::after {
+    content: ")";
+}
+
+.temp-text {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.temp-text::after {
+    content: "˚C";
+}
+
+.footer {
+    margin: 20px;
+    display: flex;
+}
+
+.footer-item {
+    flex: 1;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+#update-time::before {
+    content: "更新時間：";
+}
+
+@media all and (max-width: 540px) {
+    .temp {
+        flex-direction: column;
+    }
+
+    #result-1 {
+        font-size: 28px;
+    }
+
+    #result-2 {
+        font-size: 40px;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .footer {
+        flex-direction: column;
+    }
+}
