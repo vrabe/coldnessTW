@@ -12,8 +12,8 @@ function update() {
                 document.getElementById("result-1").textContent = "今天的冷空氣是";
                 document.getElementById("result-2").textContent = data.coldness;
             }
-            document.getElementById("current-temp").textContent = data.temp;
-            document.getElementById("min-temp").textContent = data.minTemp;
+            document.getElementById("current-temp").textContent = data.temp.toFixed(1);
+            document.getElementById("min-temp").textContent = data.minTemp.toFixed(1);
             document.getElementById("update-time").textContent = data.time;
             document.getElementById("min-temp-time").textContent = `${minTempTime.getHours()}:${minTempTime.getMinutes()}`;
             document.getElementById('loading-mask').style.display = 'none';
