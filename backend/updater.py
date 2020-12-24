@@ -23,9 +23,15 @@ def getCurrentRecord(key):
 
     result = json.loads(response.read())
 
+    temp = float(result["records"]["location"][0]["weatherElement"][0]["elementValue"])
+
+    if temp < -20.0:
+        logging.warning("Temperature is too low.\nResponse:\n" + str(result))
+        exit(0)
+
     return {
         "time": result["records"]["location"][0]["time"]["obsTime"],
-        "temp": float(result["records"]["location"][0]["weatherElement"][0]["elementValue"])
+        "temp": temp
     }
 
 # Load json files
