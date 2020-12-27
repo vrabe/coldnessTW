@@ -16,7 +16,7 @@ function update() {
             document.getElementById("current-temp").textContent = data.temp.toFixed(1);
             document.getElementById("min-temp").textContent = data.minTemp.toFixed(1);
             document.getElementById("update-time").textContent = data.time;
-            document.getElementById("min-temp-time").textContent = minTempTime.toLocaleTimeString([], { hour12: false, hour: "2-digit", minute: "2-digit" });
+            document.getElementById("min-temp-time").textContent = minTempTime.toLocaleTimeString([], { hourCycle: "h23", hour: "2-digit", minute: "2-digit" });
             document.getElementById("loading-mask").style.display = "none";
             document.getElementById("update").style.color = "#000";
         });
