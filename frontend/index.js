@@ -1,6 +1,6 @@
 function update() {
     document.getElementById("update").style.color = "#888";
-    fetch("https://api.coldness.vrabe.tw")
+    fetch("https://coldness-api.vrabe.tw")
         .then(function (response) {
             return response.json();
         })
