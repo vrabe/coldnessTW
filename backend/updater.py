@@ -4,12 +4,14 @@ import logging
 import json
 import os.path
 
+timeFormat = "%Y-%m-%d %H:%M:%S"
+
 # Fetch data from open API
 
 
 def getCurrentRecord(key):
     conn = http.client.HTTPSConnection("opendata.cwb.gov.tw")
-    url = "/api/v1/rest/datastore/O-A0003-001?format=JSON&locationName=%E8%87%BA%E5%8C%97&elementName=TIME,TEMP&parameterName=TOWN_SN"
+    url = "/api/v1/rest/datastore/O-A0003-001?format=JSON&StationId=466920&WeatherElement=AirTemperature"
     conn.request("GET", url, headers={
         "accept": "application/json",
         "authorization": key
@@ -23,14 +25,14 @@ def getCurrentRecord(key):
 
     result = json.loads(response.read())
 
-    temp = float(result["records"]["location"][0]["weatherElement"][0]["elementValue"])
+    temp = float(result["records"]["Station"][0]["WeatherElement"]["AirTemperature"])
 
     if temp < -20.0:
         logging.warning("Temperature is too low.\nResponse:\n" + str(result))
         exit(0)
 
     return {
-        "time": result["records"]["location"][0]["time"]["obsTime"],
+        "time": datetime.fromisoformat(result["records"]["Station"][0]["ObsTime"]["DateTime"]).strftime(timeFormat),
         "temp": temp
     }
 
@@ -93,7 +95,6 @@ def main():
             "temp": data["minTemp"]
         }
 
-        timeFormat = "%Y-%m-%d %H:%M:%S"
         recordTime = datetime.strptime(currentRecord["time"], timeFormat)
         dataTime = datetime.strptime(data["time"], timeFormat)
 
