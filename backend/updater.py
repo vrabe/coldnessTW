@@ -10,7 +10,7 @@ timeFormat = "%Y-%m-%d %H:%M:%S"
 
 
 def getCurrentRecord(key):
-    conn = http.client.HTTPSConnection("opendata.cwb.gov.tw")
+    conn = http.client.HTTPSConnection("opendata.cwa.gov.tw")
     url = "/api/v1/rest/datastore/O-A0003-001?format=JSON&StationId=466920&WeatherElement=AirTemperature"
     conn.request("GET", url, headers={
         "accept": "application/json",
