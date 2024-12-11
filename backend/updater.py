@@ -53,14 +53,24 @@ def getJson(path, exitIfNotFound=True):
     return result
 
 
-def coldness(temp):
+def coldnessOld(temp):
     if temp > 19.0:
-        return "無"
+        return "東北風"
     elif temp <= 19.0 and temp > 14.0:
         return "東北季風"
     elif temp <= 14.0 and temp > 12.0:
         return "大陸冷氣團"
     elif temp <= 12.0 and temp > 10.0:
+        return "強烈大陸冷氣團"
+    else:
+        return "寒流"
+
+def coldness(temp):
+    if temp > 14.4:
+        return "東北季風"
+    elif temp <= 14.4 and temp > 12.4:
+        return "大陸冷氣團"
+    elif temp <= 12.4 and temp > 10.4:
         return "強烈大陸冷氣團"
     else:
         return "寒流"
@@ -116,7 +126,8 @@ def main():
         "temp": currentRecord["temp"],
         "minTempTime": lowestRecord["time"],
         "minTemp": lowestRecord["temp"],
-        "coldness": coldness(lowestRecord["temp"])
+        "coldness": coldness(lowestRecord["temp"]),
+        "coldnessOld": coldnessOld(lowestRecord["temp"])
     }
 
     with open(dataPath, "w") as file:
